@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>PagedListForAjax测试页面</title>
+    <link href="pager.min.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.2.1.min.js"></script>
+    <script src="Scripts/util.js"></script>
+    <script src="Scripts/ajax.pager.js"></script>
+</head>
+<body>
+    <table id="dataTable" border="1" style="width: 100%"></table>
+    <br />
+    <div id="pager" class="pager"></div>
+    <script type="text/javascript">
+        $(function () {
+            $('#pager').sjAjaxPager({
+                url: "GetDataList.ashx",
+                pageSize: 2,
+                searchParam: {
+                    /*
+                    * 如果有其他的查询条件，直接在这里传入即可
+                    */
+                    id: 1,
+                    name: 'test'
+                },
+                beforeSend: function () {
+                },
+                success: function (data) {
+                    /*
+                    *返回的数据根据自己需要处理
+                    */
+                    // var data = JSON.parse(data);
+                    var tableStr = "<tr><td>Id</td><td>姓名</td><td>年龄</td></tr>";
+                    $.each(data.items, function (i, v) {
+                        tableStr += "<tr><td>" + v.Id + "</td><td>" + v.Name + "</td><td>" + v.Age + "</td></tr>";
+                    });
+
+                    $('#dataTable').html(tableStr);
+                },
+                complete: function () {
+                }
+            });
+        })
+    </script>
+</body>
+</html>
