@@ -1,7 +1,7 @@
 ﻿/**/
 ;
 (function (window, $) {
-    var sjPager = window.sjPager = {
+    var ajaxPager = window.ajaxPager = {
         opts: {
             pageSize: 10,
             preText: "pre",
@@ -32,8 +32,8 @@
         pagerElement: null,
         commonHtmlText: {
             spanHtml: "<span class='{0}'>{1}</span>",
-            pageIndexHtml: "<a href='javascript:void(0)' onclick='sjPager.doPage({0},{1},{2})'>{3}</a>",
-            rightHtml: "<span class='text'> &nbsp; 共 {0} 页， 到第</span> <input type='text' id='txtToPager' value={1} /><span class='text'>页</span> <button id='btnJump' onclick='sjPager.jumpToPage();return false;' >跳转</button>",
+            pageIndexHtml: "<a href='javascript:void(0)' onclick='ajaxPager.doPage({0},{1},{2})'>{3}</a>",
+            rightHtml: "<span class='text'> &nbsp; 共 {0} 页， 到第</span> <input type='text' id='txtToPager' value={1} /><span class='text'>页</span> <button id='btnJump' onclick='ajaxPager.jumpToPage();return false;' >跳转</button>",
             clearFloatHtml: "<div style='clear:both;'></div>",
             stringEmpty: ""
         },
@@ -204,7 +204,7 @@
         }
     }
 
-    $.fn.sjAjaxPager = function (option) {
-        return sjPager.init($(this), option);
+    $.fn.asyncPager = function (option) {
+        return ajaxPager.init($(this), option);
     };
 })(window, jQuery);

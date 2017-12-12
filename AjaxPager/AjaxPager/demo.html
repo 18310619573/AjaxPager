@@ -6,7 +6,7 @@
     <link href="pager.min.css" rel="stylesheet" />
     <script src="Scripts/jquery-3.2.1.min.js"></script>
     <script src="Scripts/util.js"></script>
-    <script src="Scripts/ajax.pager.js"></script>
+    <script src="Scripts/ajax.pager.min.js"></script>
 </head>
 <body>
     <table id="dataTable" border="1" style="width: 100%"></table>
@@ -14,7 +14,7 @@
     <div id="pager" class="pager"></div>
     <script type="text/javascript">
         $(function () {
-            $('#pager').sjAjaxPager({
+            $('#pager').asyncPager({
                 url: "GetDataList.ashx",
                 pageSize: 2,
                 searchParam: {

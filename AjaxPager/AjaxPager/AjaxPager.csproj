@@ -69,6 +69,13 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+    <None Include="bundleconfig.json" />
+    <None Include="Scripts\jquery-3.2.1.intellisense.js" />
+    <Content Include="Scripts\ajax.pager.min.js">
+      <DependentUpon>ajax.pager.js</DependentUpon>
+    </Content>
+    <Content Include="Scripts\jquery-3.2.1.js" />
+    <Content Include="Scripts\jquery-3.2.1.min.js" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -88,12 +95,9 @@
       <DependentUpon>compilerconfig.json</DependentUpon>
     </None>
     <Content Include="GetDataList.ashx" />
-    <None Include="Scripts\jquery-3.2.1.intellisense.js" />
     <Content Include="pager.min.css">
       <DependentUpon>pager.css</DependentUpon>
     </Content>
-    <Content Include="Scripts\jquery-3.2.1.js" />
-    <Content Include="Scripts\jquery-3.2.1.min.js" />
     <Content Include="Scripts\util.js" />
     <Content Include="Web.config" />
   </ItemGroup>
